@@ -44,11 +44,11 @@ input#minutes,input#seconds{
 }
 
 div.format{
-  background-color: lightblue;
+  background-color: lightgreen;
   margin: 10px;
   padding:10px;
 }
 
 div.round:hover{
-  background-color: lightgreen;
+  background-color: lightblue;
 }
