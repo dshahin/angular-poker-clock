@@ -16,7 +16,11 @@ angular.module('myApp.controllers',  [])
 			formats : []
 		};
 
+		$scope.modalShown = false;
 		
+		$scope.toggleModal = function() {
+		    $scope.modalShown = !$scope.modalShown;
+		};
 
 		var $settings = $scope.settings;
 
