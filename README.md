@@ -1,2 +1,0 @@
-angular-poker-clock
-===================
