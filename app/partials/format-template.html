@@ -1,0 +1,8 @@
+<div class="format" ng-repeat="format in settings.formats">
+	<h1>{{format.name}}</h1>
+	<input ng-model="format.name"/>
+	<button class="addRound" ng-click="format.rounds.push({name:'new',little:0,big:0,type:'round'})">add round</button>
+	
+	<app-round ng-repeat="round in format.rounds"/>
+
+</div>

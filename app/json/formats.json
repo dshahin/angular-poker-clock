@@ -1,0 +1,33 @@
+[
+	{
+		"name" :  "Format 1", 
+		"age" : 1,
+		"rounds" :[
+			{"minutes" : 10, "big" : 50, "little" : 25, "ante" : 0, "type":"round"},
+			{"minutes" : 10, "big" : 50, "little" : 25, "ante" : 0, "type":"round"},
+			{"minutes" : 10, "big" : 50, "little" : 25, "ante" : 0, "type":"round"},
+			{"minutes" : 5, "type":"break"}
+		]
+	},
+
+	{
+		"name" :  "Format 2", 
+		"age" : 1,
+		"rounds" :[
+			{"minutes" : 10, "big" : 50, "little" : 25, "ante" : 0, "type":"round"},
+			{"minutes" : 10, "big" : 50, "little" : 25, "ante" : 0, "type":"round"},
+			{"minutes" : 10, "big" : 50, "little" : 25, "ante" : 0, "type":"round"},
+			{"minutes" : 5, "type":"break"}
+		]
+	},
+	{
+		"name" :  "Format 3", 
+		"age" : 1,
+		"rounds" :[
+			{"minutes" : 10, "big" : 50, "little" : 25, "ante" : 0, "type":"round"},
+			{"minutes" : 10, "big" : 50, "little" : 25, "ante" : 0, "type":"round"},
+			{"minutes" : 10, "big" : 50, "little" : 25, "ante" : 0, "type":"round"},
+			{"minutes" : 5, "type":"break"}
+		]
+	}
+]

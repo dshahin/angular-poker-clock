@@ -1,0 +1,13 @@
+<div class="round" >
+	
+	<select ng-model="round.type">
+	  	<option value="round">round</option>
+	  	<option value="break">break</option>
+	</select> 
+
+	{{$index + 1}} 
+	<input ng-model="round.minutes"/>
+	<input ng-if="round.type == 'round'" ng-model="round.little "/>
+	<input ng-if="round.type == 'round'" ng-model="round.big"/>
+	<input ng-if="round.type == 'round'" ng-model="round.ante"/>
+</div>

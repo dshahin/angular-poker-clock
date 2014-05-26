@@ -1,0 +1,26 @@
+
+<div class="clock">
+	
+	<input type="number" id="minutes" ng-model="settings.minutes" ng-change="reset()" placeholder="minutes"/>
+	<input type="number" id="seconds" ng-model="seconds" ng-change="reset()" placeholder="seconds"/>
+	current: {{currentRound}}
+	<button id="pauseButton" ng-click="settings.running=(!settings.running)" >
+		<span ng-if='settings.running'>pause</span>
+		<span ng-if='!settings.running'>start</span>
+	</button>
+
+	<button id="resetButton" ng-click="reset()" >
+		reset
+	</button>
+
+	<input id="repeat" ng-model="settings.repeat" type="checkbox"/>
+
+	<div class="timeLeft" >{{timeLeft.hours}}:{{timeLeft.minutes}}:{{timeLeft.seconds}}</div>
+	
+	<div class="formats">
+
+		<format class="bar"/>
+	
+	</div>
+
+</div>
