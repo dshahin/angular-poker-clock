@@ -1,7 +1,13 @@
 <p>This is the partial for view 2.</p>
 <p>
 
-	<div ng-repeat="person in people "> 
-		{{person.name}} - {{person.age}}
+
+  <textarea ng-model="formats" ng-change="showFormats()" name="formats" id="formats" cols="30" rows="10">
+
+  </textarea>
+  <br/>
+  <a ng-click="showFormats()">show formats</a>
+	<div ng-repeat="round in rounds ">
+		{{round.type}}  - {{round.minutes}} - {{round.big}} - {{round.little}} - {{round.ante}}
 	</div>
 </p>
