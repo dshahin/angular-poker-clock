@@ -95,3 +95,14 @@ div.round:hover{
   font-weight: bold;
   font-family: 'arial', 'sans-serif';
 }
+
+table.rounds {
+  /*width: 500px;*/
+  border: 1px solid red;
+
+}
+
+table.rounds tr td,th {
+  text-align: left;
+  border: 1px solid red;
+}

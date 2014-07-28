@@ -1,13 +1,46 @@
 <p>This is the partial for view 2.</p>
 <p>
 
+{{currentRound}}<br/>
+  <textarea ng-model="formats" ng-change="showFormats()" name="formats" id="formats" cols="30" rows="10"></textarea>
+  <textarea ng-model="quotes"  name="quotes" id="quotes" cols="30" rows="10" ng-hide="true"></textarea>
 
-  <textarea ng-model="formats" ng-change="showFormats()" name="formats" id="formats" cols="30" rows="10">
-
-  </textarea>
   <br/>
-  <a ng-click="showFormats()">show formats</a>
-	<div ng-repeat="round in rounds ">
-		{{round.type}}  - {{round.minutes}} - {{round.big}} - {{round.little}} - {{round.ante}}
+  	<input type="number" ng-model="currentRoundIndex" ng-change="showFormats()"></input>
+  	<table class="rounds">
+  		<tr>
+  			<th ng-repeat="heading in headings">{{heading}}</th>
+  		</tr>
+  		<tr ng-repeat="round in rounds ">
+  			<td>{{$index}}</td>
+  			<td>{{round.minutes}}</td>
+  			<td>{{round.little}}</td>
+  			<td>{{round.big}}</td>
+  			<td>{{round.ante}}</td>
+  		</tr>
+  	</table>
+	<div >
+
+total minutes{{totalTime}}
+
+<!-- <div ng-repeat="quote in quotes" ng-click="say(quote)">{{quote}}</div> -->
+
+
+<pre id="preset" ng-hide="true">10 100 200 25
+10 200 400 25
+10 300 600 25
+10 400 800 25
+10 500 1000 25
+10 600 1200 25
+10 700 1400 25
+10 800 1600 25</pre>
+
+
+
+<pre id="quips" ng-hide="true">shuffle up and deal
+let's get ready to rumble
+giddyup
+the time is now
+it's go time!</pre>
 	</div>
 </p>

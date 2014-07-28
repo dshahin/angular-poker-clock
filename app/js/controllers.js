@@ -70,32 +70,64 @@ angular.module('myApp.controllers',  [])
 		}, $settings.tickTime);
 	}])
 
-	.controller('MyCtrl2', ['$scope', 'People', function($scope, People) {
+	.controller('MyCtrl2', ['$scope', 'People', 'roundsFactory', function($scope, People, roundsFactory) {
 		$scope.people = People.query();
+
+		//$scope.speak = true;
+		$scope.headings = ['#','time','little','big','ante'];
 		// $scope.numberOfFormats = $scope.formats.split('\n').length;
 		console.log($scope.formats);
-		var formatTemplate = {
-			type: 'round',
-			minutes: 0,
-			little: 0,
-			big: 0,
-			ante: 0
-		}
+		$scope.formats = $('#preset').html();
+		$scope.quotes = $('#quips').html().split(/\n/);
+		$scope.totalTime = null;
+
+		
+
+
+		$scope.say = function (message) {
+            if ($scope.speak) {
+                if ('speechSynthesis' in window) {
+                    window.speechSynthesis.speak(new SpeechSynthesisUtterance(message));
+                } else {
+                    alert(message);
+                }
+            }
+            
+            return this;
+        }
+
+        
+        //$scope.speak = true;
+
+        $scope.randomQuote = function(){
+        	$scope.quoteIndex = Math.floor(Math.random() * $scope.quotes.length) + 0;
+        	$scope.say($scope.quotes[$scope.quoteIndex]);
+        }
+
+        
+
+		var formatTemplate = roundsFactory.template();
+
 		$scope.showFormats = function(){
 			var formats = $scope.formats.split('\n');
-			$scope.rounds = [];
-			angular.forEach(formats, function(format){
-				var fields = format.split(' ');
-				var newFormat = {};
-				angular.copy(formatTemplate, newFormat);
-				newFormat.minutes = fields[0];
-				newFormat.little = fields[1];
-				newFormat.big = fields[2];
-				newFormat.ante = fields[3];
-				$scope.rounds.push(newFormat);
-			});
+
+			$scope.totalTime = 0;
+			$scope.rounds = roundsFactory.rounds(formats);
+			
+			if($scope.currentRoundIndex < 0 ){
+				$scope.currentRoundIndex = 0;
+			}else if($scope.currentRoundIndex >= $scope.rounds.length){
+				$scope.currentRoundIndex = $scope.rounds.length -1;
+			}
+			$scope.currentRound = $scope.rounds[$scope.currentRoundIndex];
+			
 			console.log(formats);
+
 		}
+		$scope.showFormats();
+		$scope.currentRoundIndex = 0;
+		
+		$scope.randomQuote();
 	}])
 
 	.controller('MyCtrl3', ['$scope',  'People',  function($scope,  People) {
