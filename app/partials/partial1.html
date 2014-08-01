@@ -1,41 +1,40 @@
-
 <div class="clock">
 
-	<button ng-click='toggleModal()'>Open Modal Dialog</button>
+    <button ng-click='toggleModal()'>Open Modal Dialog</button>
 
-	
-	<input type="number" id="minutes" ng-model="settings.minutes" ng-change="reset()" placeholder="minutes"/>
-	<input type="number" id="seconds" ng-model="seconds" ng-change="reset()" placeholder="seconds"/>
-	current: {{currentRound}}
-	<button id="pauseButton" ng-click="settings.running=(!settings.running)" >
-		<span ng-if='settings.running'>pause</span>
-		<span ng-if='!settings.running'>start</span>
-	</button>
 
-	<button id="resetButton" ng-click="reset()" >
-		reset
-	</button>
+    <input type="number" id="minutes" ng-model="settings.minutes" ng-change="reset()" placeholder="minutes" />
+    <input type="number" id="seconds" ng-model="seconds" ng-change="reset()" placeholder="seconds" />current: {{currentRound}}
+    <button id="pauseButton" ng-click="settings.running=(!settings.running)">
+        <span ng-if='settings.running'>pause</span>
+        <span ng-if='!settings.running'>start</span>
+    </button>
 
-	<input id="repeat" ng-model="settings.repeat" type="checkbox"/>
+    <button id="resetButton" ng-click="reset()">
+        reset
+    </button>
 
-	<div class="timeLeft" >{{timeLeft.hours}}:{{timeLeft.minutes}}:{{timeLeft.seconds}}</div>
+    <input id="repeat" ng-model="settings.repeat" type="checkbox" />
 
-	<div class='ng-modal' ng-show='show'>
-	  	<div class='ng-modal-overlay' ng-click='hideModal()'></div>
-	  	<div class='ng-modal-dialog' ng-style='dialogStyle'>
-	    	<div class='ng-modal-close' ng-click='hideModal()'>X</div>
-	    	<div class='ng-modal-dialog-content' ng-transclude></div>
-	  	</div>
-	</div>
-	
-	<div class="formats">
+    <div class="timeLeft">{{timeLeft.hours}}:{{timeLeft.minutes}}:{{timeLeft.seconds}}</div>
 
-		<format class="bar"/>
-	
-	</div>
+    <div class='ng-modal' ng-show='show'>
+        <div class='ng-modal-overlay' ng-click='hideModal()'></div>
+        <div class='ng-modal-dialog' ng-style='dialogStyle'>
+            <div class='ng-modal-close' ng-click='hideModal()'>X</div>
+            <div class='ng-modal-dialog-content' ng-transclude></div>
+        </div>
+    </div>
 
-	<modal-dialog show='modalShown' width='750px' height='60%'>
-	  <p>Modal Content Goes here, dude<p>
-	</modal-dialog>
+    <div class="formats">
+
+        <format class="bar" />
+
+    </div>
+
+    <modal-dialog show='modalShown' width='750px' height='60%'>
+        <p>Modal Content Goes here, dude
+            <p>
+    </modal-dialog>
 
 </div>
