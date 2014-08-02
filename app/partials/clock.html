@@ -16,21 +16,35 @@
 
     <input id="repeat" ng-model="settings.repeat" type="checkbox" />
 
-    <div class="timeLeft">{{timeLeft.hours}}:{{timeLeft.minutes}}:{{timeLeft.seconds}}</div>
+    <center>
+        <div class="timeLeft" ng-class="timerVar">{{timeLeft.hours}}:{{timeLeft.minutes}}:{{timeLeft.seconds}}</div>
+    </center>
+
+    <div>
+        <input type="button" value="set" ng-click="timerVar='timer'">
+        <input type="button" value="clear" ng-click="timerVar=''">
+    </div>
+
+
+    <div class="container">
+        <div class="item">this is an item</div>
+        <div class="item center">this is a center item</div>
+        <div class="item">
+            <div ng-repeat="quote in quotes" ng-click="quotes.say(quote)">{{quote}}</div>
+        </div>
+    </div>
+
+
+
 
     <div class='ng-modal' ng-show='show'>
         <div class='ng-modal-overlay' ng-click='hideModal()'></div>
         <div class='ng-modal-dialog' ng-style='dialogStyle'>
             <div class='ng-modal-close' ng-click='hideModal()'>X</div>
-            <div class='ng-modal-dialog-content' ng-transclude></div>
+            <div class='ng-modal-dialog-content' ></div>
         </div>
     </div>
 
-    <div class="formats">
-
-        <format class="bar" />
-
-    </div>
 
     <modal-dialog show='modalShown' width='750px' height='60%'>
         <p>Modal Content Goes here, dude

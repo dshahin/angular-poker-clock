@@ -5,14 +5,15 @@
 angular.module('myApp', [
   'ngRoute',
   'ngResource',
+  'ngAnimate',
   'myApp.filters',
   'myApp.services',
   'myApp.directives',
   'myApp.controllers'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view1', {templateUrl: 'partials/partial1.html', controller: 'ClockController'});
-  $routeProvider.when('/view2', {templateUrl: 'partials/partial2.html', controller: 'MyCtrl2'});
-  $routeProvider.when('/view3', {templateUrl: 'partials/partial3.html', controller: 'MyCtrl3'});
-  $routeProvider.otherwise({redirectTo: '/view1'});
+  $routeProvider.when('/clock', {templateUrl: 'partials/clock.html', controller: 'ClockController'});
+  $routeProvider.when('/structure', {templateUrl: 'partials/structure.html', controller: 'structureController'});
+  $routeProvider.when('/settings', {templateUrl: 'partials/settings.html', controller: 'settingsController'});
+  $routeProvider.otherwise({redirectTo: '/clock'});
 }]);

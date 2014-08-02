@@ -4,7 +4,6 @@
   "description": "A currently clone",
   "version": "0.6",
   "permissions": [
-    "unlimitedStorage",
     "notifications",
     "tts"
   ],

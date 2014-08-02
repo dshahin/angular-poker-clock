@@ -1,7 +1,8 @@
 <png-show="stuff.length">This is the partial for view 3.</p>
 <p ng-show="stuff.length">
   In the beginning:{{ 0 | date }} <br/>
-
+  <input id="newQuote" ng-model="newQuote"></input>
+  <button ng-click="addQuote(newQuote)">add quote</button>
   <input ng-model="filterText"/>
   <select ng-model="orderByField">
   	<option value="name">name</option>
@@ -10,5 +11,5 @@
   <foo-bar ng-repeat="thing in stuff | filter:filterText | orderBy:orderByField"/>
 
 
-  <gh-visualization val="data" grouped="grouped"></gh-visualization>	
+  <gh-visualization val="data" grouped="grouped"></gh-visualization>
 </p>

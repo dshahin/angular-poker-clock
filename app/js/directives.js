@@ -11,17 +11,17 @@ angular.module('myApp.directives', []).
   }]).
 
   directive('appFoo', [ function() {
-    
+
     	return {
 	      restrict: 'AE',
 	      replace: 'true',
 	      templateUrl: 'partials/foo-bar.html'
 	  };
-    
+
   }]).
 
   directive('format', [ function() {
-    
+
     	return {
 	      restrict: 'AE',
 	      replace: 'true',
@@ -31,16 +31,16 @@ angular.module('myApp.directives', []).
 	      },
 	      controller: function($scope, $compile, $http) {
 	      // $scope is the appropriate scope for the directive
-		      this.addChild = function(appRound) { 
+		      this.addChild = function(appRound) {
 		        console.log('Got the message from nested directive:' + appRound.message);
 		      };
 	      }
 	  };
-    
+
   }]).
 
   directive('appRound', [ function() {
-    
+
     	return {
 	      restrict: 'AE',
 	      replace: 'true',
@@ -50,7 +50,7 @@ angular.module('myApp.directives', []).
 	      		console.log(attrs);
 	      }
 	  };
-    
+
   }]).
 
   directive('modalDialog', function() {
